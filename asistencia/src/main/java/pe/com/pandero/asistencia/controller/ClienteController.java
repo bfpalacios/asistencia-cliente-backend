@@ -44,6 +44,8 @@ public class ClienteController {
     
     @PostMapping("/cliente")
     public Cliente createCliente(@Valid @RequestBody Cliente cliente) {
+    	
+    System.out.print("cliente id "+ cliente.getIdCliente());
         return clienteRepository.save(cliente);
     }
 
@@ -59,6 +61,7 @@ public class ClienteController {
         cliente.setEmail(clienteDetails.getEmail());
         cliente.setIdProducto(clienteDetails.getIdProducto());
         cliente.setNombre(clienteDetails.getNombre());
+        cliente.setDni(clienteDetails.getDni());
         
         final Cliente updatedCliente = clienteRepository.save(cliente);
         return ResponseEntity.ok(updatedCliente);

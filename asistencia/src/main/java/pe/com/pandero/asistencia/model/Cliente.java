@@ -19,14 +19,17 @@ public class Cliente {
     private int edad;
     private int idProducto;
     private String email;
+    private String dni;
     private String calificacion;
     
     public Cliente() {}
     
-	 
-	
+	  
+
+
+
 	public Cliente(long idCliente, String nombre, String categoriaCrediticia, int edad, int idProducto, String email,
-			String calificacion) {
+			String dni, String calificacion) {
 		super();
 		this.idCliente = idCliente;
 		this.nombre = nombre;
@@ -34,10 +37,23 @@ public class Cliente {
 		this.edad = edad;
 		this.idProducto = idProducto;
 		this.email = email;
+		this.dni = dni;
 		this.calificacion = calificacion;
 	}
 
 
+
+
+	@Column(name = "dni", nullable = false)
+	public String getDni() {
+		return dni;
+	}
+ 
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+ 
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
